@@ -1,8 +1,11 @@
+import AppContainer from "./App-styles";
+import Navbar from "../navbar/Navbar";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <AppContainer>
+      <Navbar />
+    </AppContainer>
   );
 }
 
