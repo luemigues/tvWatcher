@@ -10,18 +10,17 @@ export const styles = {
   },
 
   fontSize: {
-    pbold: "22px",
-    pextrab: "18px",
-    preg: "14px",
-    pblack: "32px",
+    pbig: "28px",
+    pmid: "22px",
+    preg: "18px",
+    ppar: "14px",
   },
 
   fontWeight: {
-    pbold: "700",
-    pextrab: "800",
+    pbold: "500",
     preg: "400",
-    pblack: "900",
+    plight: "300",
   },
 
-  fontFam: "'Poppins', arial, sans-serif",
+  fontFam: "'Jost', arial, sans-serif",
 };
