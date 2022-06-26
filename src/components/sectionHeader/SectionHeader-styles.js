@@ -11,9 +11,9 @@ export const CoverImage = styled.img`
 
 export const SectionTitle = styled.h1`
   font-size: ${(props) =>
-    props.secondary ? styles.fontSize.preg : styles.fontSize.pbig};
+    props.secondary ? styles.fontSize.reg : styles.fontSize.big};
   font-weight: ${(props) =>
-    props.secondary ? styles.fontWeight.preg : styles.fontWeight.pbold};
+    props.secondary ? styles.fontWeight.reg : styles.fontWeight.bold};
   font-family: ${styles.fontFam};
   color: ${styles.colors.dark};
   text-align: ${(props) => (props.alignText ? props.alignText : "center")};
