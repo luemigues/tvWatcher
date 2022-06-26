@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "./ShowDisplay-styles";
 import ShowCard from "../cards/showCard/ShowCard";
+import ShowModal from "../showModal/ShowModal";
 import { useSelector, useDispatch } from "react-redux";
 import { addFavorite, removeFavorite } from "../../store/favorite.slice";
 
 function ShowDisplay(props) {
+  const [openModal, setOpenModal] = useState(false);
   const favorites = useSelector((state) => state.favorites.value);
   const dispatch = useDispatch();
 
@@ -23,8 +25,12 @@ function ShowDisplay(props) {
       e.target.parentElement.getAttribute("name") !== "favIcon" &&
       e.target.getAttribute("name") !== "favIcon"
     ) {
-      // open modal
+      setOpenModal(true);
     }
+  };
+
+  let toggleModal = () => {
+    setOpenModal((prevState) => !prevState);
   };
 
   return (
@@ -45,6 +51,11 @@ function ShowDisplay(props) {
           />
         );
       })}
+
+      {openModal && (
+        <ShowModal toggleModal={toggleModal}>
+        </ShowModal>
+      )}
     </Container>
   );
 }
