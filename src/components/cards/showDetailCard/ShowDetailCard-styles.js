@@ -5,7 +5,8 @@ import { StyledIconBase } from "@styled-icons/styled-icon";
 export const MainInfoContainer = styled.div`
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
+  width: 100%;
 `;
 
 export const ImageContainer = styled.div`
@@ -13,7 +14,7 @@ export const ImageContainer = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
-  margin: 1%;
+  margin: 1% 3%;
   position: relative;
 `;
 
@@ -56,6 +57,7 @@ export const DetailsContainer = styled.div`
   align-items: flex-start;
   flex-direction: column;
   margin: 1%;
+  max-width: 100%;
 `;
 
 export const Title = styled.h2`
@@ -83,6 +85,7 @@ export const Summary = styled.p`
   font-family: ${styles.fontFam};
   color: ${styles.colors.dark};
   text-align: left;
+  overflow-wrap: break-word;
 `;
 
 export const Aired = styled.p`

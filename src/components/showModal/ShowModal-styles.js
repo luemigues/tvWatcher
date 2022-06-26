@@ -42,7 +42,6 @@ export const ModalData = styled.div`
   align-content: space-between;
   justify-content: center;
   width: 100%;
-  position: absolute;
   top: 56px;
 `;
 
