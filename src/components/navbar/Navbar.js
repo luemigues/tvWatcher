@@ -13,7 +13,6 @@ const navItems = [
 ];
 
 function Navbar(props) {
-
   return (
     <Header>
       <Link to="/">
