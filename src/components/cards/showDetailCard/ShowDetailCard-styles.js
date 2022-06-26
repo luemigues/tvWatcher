@@ -1,12 +1,26 @@
 import styled from "styled-components";
 import { styles } from "../../../utils/defaultStyles";
-import { StyledIconBase } from "@styled-icons/styled-icon";
 
 export const MainInfoContainer = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  width: 100%;
+  max-width: 100%;
+  flex-wrap: wrap;
+  padding: 0% 3%;
+  position: relative;
+  box-sizing: border-box;
+`;
+
+export const EpisodesContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2% 3%;
+`;
+
+export const Episode = styled.div`
+  width: 30%;
 `;
 
 export const ImageContainer = styled.div`
@@ -16,9 +30,14 @@ export const ImageContainer = styled.div`
   flex-direction: column;
   margin: 1% 3%;
   position: relative;
+  flex-shrink: 1;
 `;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+  object-fit: contain;
+  width: 100%; /* or any custom size */
+  height: 100%;
+`;
 
 export const Shadow = styled.div`
   display: flex;
@@ -57,7 +76,14 @@ export const DetailsContainer = styled.div`
   align-items: flex-start;
   flex-direction: column;
   margin: 1%;
-  max-width: 100%;
+  max-width: 60%;
+  text-align: left;
+
+  @media (max-width: 1120px) {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 export const Title = styled.h2`
@@ -66,7 +92,6 @@ export const Title = styled.h2`
   font-family: ${styles.fontFam};
   color: ${styles.colors.dark};
   line-height: ${styles.fontSize.par};
-  text-align: left;
 `;
 
 export const Year = styled.p`
@@ -75,7 +100,6 @@ export const Year = styled.p`
   font-family: ${styles.fontFam};
   color: ${styles.colors.dark};
   line-height: ${styles.fontSize.par};
-  text-align: left;
   margin: 0px;
 `;
 
@@ -84,8 +108,8 @@ export const Summary = styled.p`
   font-weight: ${styles.fontWeight.reg};
   font-family: ${styles.fontFam};
   color: ${styles.colors.dark};
-  text-align: left;
   overflow-wrap: break-word;
+  max-width: 100%;
 `;
 
 export const Aired = styled.p`
@@ -98,29 +122,17 @@ export const Aired = styled.p`
 `;
 
 export const TagContainer = styled.div`
-  display: flex;
+  display: inline-flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 2% 0%;
+  margin: 3% 0%;
   font-size: ${styles.fontSize.small};
   height: min-content;
-`;
+  flex-wrap: wrap;
+  width: 100%;
 
-export const FavIconWrapper = styled.div`
-  width: fit-content;
-  float: right;
-
-  ${StyledIconBase} {
-    height: 27px;
-    width: 27px;
-    margin: 7px;
-    color: ${styles.colors.alter};
-    webkit-filter: drop-shadow(1px 7px 19px #000);
-    filter: drop-shadow(1px 7px 19px #000);
-
-    @media (max-width: 990px) {
-      height: 10px;
-      width: 10px;
-    }
+  @media (max-width: 990px) {
+    justify-content: center;
+    align-items: center;
   }
 `;

@@ -10,8 +10,9 @@ export const Container = styled.div`
   background-color: ${styles.colors.secondary};
   border: 1px solid ${styles.colors.secondary};
   border-radius: 25%/100%;
-  margin-right: 10%;
-  padding: 7% 30%;
+  margin: 1em 0em;
+  margin-right: 1em;
+  padding: .75em 3em;
 
   font-size: inherit;
   font-weight: ${styles.fontWeight.reg};

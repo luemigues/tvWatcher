@@ -6,18 +6,29 @@ import { useSelector, useDispatch } from "react-redux";
 import { addFavorite, removeFavorite } from "../../store/favorite.slice";
 import { selectShow, removeSelectedShow } from "../../store/selectedShow.slice";
 import ShowDetailCard from "../cards/showDetailCard/ShowDetailCard";
+import tvMaze from "../../utils/resources";
 
 function ShowDisplay(props) {
   const [openModal, setOpenModal] = useState(false);
+  const [prevEpisode, setPrevEpisode] = useState({});
   const favorites = useSelector((state) => state.favorites.value);
   const selectedShow = useSelector((state) => state.selectedShow.value);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!openModal) {
-      dispatch(removeSelectedShow());
+    if (selectedShow.show) {
+      let loadPrevEpisode = async () => {
+        let splitUrl = selectedShow.show._links.previousepisode.href.split("/");
+        let episodeId = splitUrl[splitUrl.length - 1];
+
+        let episode = await tvMaze.getEpisode(episodeId);
+
+        setPrevEpisode(episode);
+      };
+
+      loadPrevEpisode();
     }
-  }, [openModal]);
+  });
 
   let handleFavorite = (id) => {
     let isFav = favorites.findIndex((favShow) => favShow.show.id === id) > -1;
@@ -41,8 +52,10 @@ function ShowDisplay(props) {
     }
   };
 
-  let toggleModal = () => {
-    setOpenModal((prevState) => !prevState);
+  let closeModal = () => {
+    setOpenModal(false);
+    dispatch(removeSelectedShow());
+    setPrevEpisode({});
   };
 
   return (
@@ -65,8 +78,8 @@ function ShowDisplay(props) {
       })}
 
       {openModal && (
-        <ShowModal toggleModal={toggleModal}>
-          <ShowDetailCard show={selectedShow} />
+        <ShowModal toggleModal={closeModal}>
+          <ShowDetailCard show={selectedShow} prevEpisode={prevEpisode} />
         </ShowModal>
       )}
     </Container>

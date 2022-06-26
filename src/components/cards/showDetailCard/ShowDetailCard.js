@@ -11,8 +11,11 @@ import {
   Aired,
   Image,
   TagContainer,
+  EpisodesContainer,
+  Episode,
 } from "./ShowDetailCard-styles";
 import GenreTag from "../../global/genreTag/GenreTag";
+import EpisodeCard from "../episodeCard/EpisodeCard";
 
 function ShowDetailCard(props) {
   let show = props.show.show;
@@ -42,6 +45,13 @@ function ShowDetailCard(props) {
           )}
         </DetailsContainer>
       </MainInfoContainer>
+      <EpisodesContainer>
+        {props.prevEpisode && (
+          <Episode>
+            <EpisodeCard title="Previous episode" episode={props.prevEpisode} />
+          </Episode>
+        )}
+      </EpisodesContainer>
     </>
   );
 }

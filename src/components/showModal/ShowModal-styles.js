@@ -19,10 +19,10 @@ export const ModalContainer = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   padding: 1%;
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: fit-content;
   position: absolute;
-  top: 10%;
+  top: 10vh;
 
   border-bottom: 1px solid ${styles.colors.border};
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -34,6 +34,10 @@ export const ModalContainer = styled.div`
   border-radius: 2%;
 
   z-index: 150;
+
+  @media (min-width: 990px) {
+    width: 70%;
+  }
 `;
 
 export const ModalData = styled.div`
@@ -42,7 +46,7 @@ export const ModalData = styled.div`
   align-content: space-between;
   justify-content: center;
   width: 100%;
-  top: 56px;
+  box-sizing: border-box;
 `;
 
 export const CloseIcon = styled(Close)`
