@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "./ShowDisplay-styles";
 import ShowCard from "../cards/showCard/ShowCard";
 import ShowModal from "../showModal/ShowModal";
 import { useSelector, useDispatch } from "react-redux";
 import { addFavorite, removeFavorite } from "../../store/favorite.slice";
+import { selectShow, removeSelectedShow } from "../../store/selectedShow.slice";
+import ShowDetailCard from "../cards/showDetailCard/ShowDetailCard";
 
 function ShowDisplay(props) {
   const [openModal, setOpenModal] = useState(false);
   const favorites = useSelector((state) => state.favorites.value);
+  const selectedShow = useSelector((state) => state.selectedShow.value);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!openModal) {
+      dispatch(removeSelectedShow());
+    }
+  }, [openModal]);
 
   let handleFavorite = (id) => {
     let isFav = favorites.findIndex((favShow) => favShow.show.id === id) > -1;
@@ -25,6 +34,9 @@ function ShowDisplay(props) {
       e.target.parentElement.getAttribute("name") !== "favIcon" &&
       e.target.getAttribute("name") !== "favIcon"
     ) {
+      let showIndex = props.shows.findIndex((show) => show.show.id === id);
+      if (showIndex > -1) dispatch(selectShow(props.shows[showIndex]));
+
       setOpenModal(true);
     }
   };
@@ -54,6 +66,7 @@ function ShowDisplay(props) {
 
       {openModal && (
         <ShowModal toggleModal={toggleModal}>
+          <ShowDetailCard show={selectedShow} />
         </ShowModal>
       )}
     </Container>

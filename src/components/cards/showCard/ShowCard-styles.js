@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { styles } from "../../../utils/defaultStyles";
 import { StyledIconBase } from "@styled-icons/styled-icon";
-import { FavoriteBorder, Favorite } from "@styled-icons/material";
 
 export const Container = styled.div`
   display: flex;
@@ -45,11 +44,11 @@ export const Rating = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: ${styles.fontSize.reg};
+  font-size: ${styles.fontSize.mid};
   font-weight: ${styles.fontWeight.light};
   font-family: ${styles.fontFam};
   color: ${styles.colors.alter};
-  margin: 0px;
+  min-width: fit-content;
   line-height: ${styles.fontSize.par};
 `;
 
@@ -61,18 +60,7 @@ export const Title = styled.h2`
   margin: 0px;
   line-height: ${styles.fontSize.par};
   text-align: left;
-  max-width: 75%;
-`;
-
-export const Year = styled.p`
-  font-size: ${styles.fontSize.par};
-  font-weight: ${styles.fontWeight.light};
-  font-family: ${styles.fontFam};
-  color: ${styles.colors.alter};
-  display: inline;
-  margin-block-start: unset;
-  margin-block-end: unset;
-  margin: 0px;
+  max-width: 60%;
 `;
 
 export const TopShading = styled.div`
@@ -102,7 +90,3 @@ export const FavIconWrapper = styled.div`
     }
   }
 `;
-
-export const FavUnsaved = styled(FavoriteBorder)``;
-
-export const FavSaved = styled(Favorite)``;
