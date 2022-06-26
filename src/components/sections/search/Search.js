@@ -1,16 +1,29 @@
 import React, { useState } from "react";
-import { Container } from "./Search-styles";
+import { Container, ResultText } from "./Search-styles";
 import tvMaze from "../../../utils/resources";
 import SectionHeader from "../../sectionHeader/SectionHeader";
 import SearchBar from "../../global/searchBar/SearchBar";
 import ShowDisplay from "../../showsDisplay/ShowDisplay";
 
 function SearchSection(props) {
+  
   let [showResults, setShowResults] = useState([]);
+  let [searchText, setSearchText] = useState("");
+
+  let getText = () => {
+    let text;
+    if (showResults.length > 0) text = `showing results for "${searchText}"`;
+    else if (showResults.length === 0 && searchText !== "")
+      text = `No shows found for "${searchText}". Try another search term.`;
+    else text = "";
+
+    return text;
+  };
 
   let handleSearch = async (value) => {
     try {
       let search = await tvMaze.search(value);
+      setSearchText(value);
       setShowResults(search);
     } catch (error) {
       setShowResults([]);
@@ -20,8 +33,9 @@ function SearchSection(props) {
   return (
     <Container>
       <SectionHeader title="Dont miss out on any updates from your favorite shows" />
-      <SearchBar handleChange={handleSearch} margin="40px" />
-      {showResults.length > 0 && <ShowDisplay shows={showResults} />}
+      <SearchBar handleSearch={handleSearch} margin="40px" />
+      <ResultText>{getText()}</ResultText>
+      <ShowDisplay shows={showResults} />
     </Container>
   );
 }

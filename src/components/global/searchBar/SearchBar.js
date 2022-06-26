@@ -16,7 +16,7 @@ function SearchBar(props) {
 
   let handleSearch = () => {
     if (text !== "") {
-      props.handleChange(text);
+      props.handleSearch(text);
     }
   };
 
