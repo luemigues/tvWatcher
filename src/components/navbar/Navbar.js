@@ -7,7 +7,7 @@ import { ReactComponent as Logo } from "../../assets/logo-wide.svg";
 import NavItem from "./navItem/NavItem";
 
 const navItems = [
-  { icon: SearchAlt, destination: "search" },
+  { icon: SearchAlt, destination: "/" },
   { icon: FavoriteBorder, destination: "favorites" },
   { icon: CalendarHeart, destination: "upcoming" },
 ];
