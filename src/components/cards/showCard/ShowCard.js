@@ -12,9 +12,15 @@ import { FavoriteBorder, Favorite } from "@styled-icons/material";
 
 function ShowCard(props) {
   return (
-    <Container {...props} onClick={(e) => props.handleOnClick(e, props.show.id)}>
+    <Container
+      {...props}
+      onClick={(e) => props.handleOnClick(e, props.show.id)}
+    >
       <TopShading>
-        <FavIconWrapper name="favIcon" onClick={() => props.handleFavorite(props.show.id)}>
+        <FavIconWrapper
+          name="favIcon"
+          onClick={() => props.handleFavorite(props.show.id)}
+        >
           {props.fav ? <Favorite /> : <FavoriteBorder />}
         </FavIconWrapper>
       </TopShading>
@@ -22,7 +28,7 @@ function ShowCard(props) {
         <Info>
           <Title>{props.show.name}</Title>
         </Info>
-        <Rating>{props.show.rating.avarage}</Rating>
+        <Rating>{props.show.rating.average && `★ ${props.show.rating.average}`}</Rating>
       </Details>
     </Container>
   );

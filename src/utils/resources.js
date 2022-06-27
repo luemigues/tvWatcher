@@ -10,6 +10,15 @@ const tvMaze = {
       throw error.message;
     }
   },
+
+  async getEpisode(id) {
+    try {
+      let results = await axios.get(`${url}/episodes/${id}`);
+      return results.data;
+    } catch (error) {
+      throw error.message;
+    }
+  },
 };
 
 export default tvMaze;

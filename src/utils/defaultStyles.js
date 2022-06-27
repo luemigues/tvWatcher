@@ -14,6 +14,7 @@ export const styles = {
     mid: "22px",
     reg: "18px",
     par: "14px",
+    small: "11px",
   },
 
   fontWeight: {
