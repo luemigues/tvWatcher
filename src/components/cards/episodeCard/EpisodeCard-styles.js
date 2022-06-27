@@ -8,6 +8,7 @@ export const EpisodeContainer = styled.div`
   flex-direction: column;
   box-sizing: border-box;
   width: 100%;
+  min-width: fit-content;
 `;
 
 export const Header = styled.div`
@@ -18,7 +19,8 @@ export const Header = styled.div`
   width: 100%;
   background-color: ${styles.colors.secondary};
   border: 1px solid ${styles.colors.secondary};
-  padding: 3%;
+  border-radius: 10px 10px 0px 0px;
+  padding: 4%;
   box-sizing: border-box;
 
   font-size: inherit;
@@ -34,22 +36,24 @@ export const EpisodeDetails = styled.div`
   flex-direction: column;
   height: fit-content;
   box-sizing: border-box;
-  padding: 10% 10%;
+  padding: 7%;
   width: 100%;
   border: 1px solid ${styles.colors.border};
+  border-radius: 0px 0px 10px 10px;
 `;
 
 export const EpisodeInfo = styled.div`
-  font-size: ${styles.fontSize.mid};
+  font-size: ${styles.fontSize.reg};
   font-weight: ${styles.fontWeight.bold};
   font-family: ${styles.fontFam};
   color: ${styles.colors.main};
   box-sizing: border-box;
-  overflow-wrap: break-word;
+  overflow-wrap: auto;
+  text-align: left;
 `;
 
 export const Date = styled.div`
-  font-size: ${styles.fontSize.reg};
+  font-size: ${styles.fontSize.par};
   font-weight: ${styles.fontWeight.reg};
   font-family: ${styles.fontFam};
   color: ${styles.colors.main};

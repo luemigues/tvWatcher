@@ -22,7 +22,7 @@ export const ModalContainer = styled.div`
   width: 80%;
   height: fit-content;
   position: absolute;
-  top: 10vh;
+  top: 70px;
 
   border-bottom: 1px solid ${styles.colors.border};
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -31,7 +31,7 @@ export const ModalContainer = styled.div`
   -webkit-backdrop-filter: blur(31px);
   -webkit-box-shadow: -1px 1px 50px -4px rgba(0, 0, 0, 0.45);
   box-shadow: -1px 1px 50px -4px rgba(0, 0, 0, 0.45);
-  border-radius: 2%;
+  border-radius: 2%/3%;
 
   z-index: 150;
 

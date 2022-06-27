@@ -3,34 +3,26 @@ import { styles } from "../../../utils/defaultStyles";
 
 export const MainInfoContainer = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   max-width: 100%;
   flex-wrap: wrap;
-  padding: 0% 3%;
+  padding: 1%;
   position: relative;
   box-sizing: border-box;
-`;
 
-export const EpisodesContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2% 3%;
-`;
-
-export const Episode = styled.div`
-  width: 30%;
+  @media (max-width: 900px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const ImageContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
   flex-direction: column;
-  margin: 1% 3%;
-  position: relative;
-  flex-shrink: 1;
+  position: inherit;
 `;
 
 export const Image = styled.img`
@@ -75,11 +67,11 @@ export const DetailsContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  margin: 1%;
   max-width: 60%;
   text-align: left;
+  padding: 0% 5%;
 
-  @media (max-width: 1120px) {
+  @media (max-width: 900px) {
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -91,10 +83,19 @@ export const Title = styled.h2`
   font-weight: ${styles.fontWeight.bold};
   font-family: ${styles.fontFam};
   color: ${styles.colors.dark};
-  line-height: ${styles.fontSize.par};
+  margin-top: 0px;
 `;
 
-export const Year = styled.p`
+export const Summary = styled.p`
+  font-size: ${styles.fontSize.small};
+  font-weight: ${styles.fontWeight.reg};
+  font-family: ${styles.fontFam};
+  color: ${styles.colors.dark};
+  overflow-wrap: break-word;
+  max-width: 100%;
+`;
+
+export const MoreInfo = styled.div`
   font-size: ${styles.fontSize.mid};
   font-weight: ${styles.fontWeight.light};
   font-family: ${styles.fontFam};
@@ -103,36 +104,56 @@ export const Year = styled.p`
   margin: 0px;
 `;
 
-export const Summary = styled.p`
-  font-size: ${styles.fontSize.reg};
-  font-weight: ${styles.fontWeight.reg};
-  font-family: ${styles.fontFam};
-  color: ${styles.colors.dark};
-  overflow-wrap: break-word;
-  max-width: 100%;
-`;
-
-export const Aired = styled.p`
-  font-size: ${styles.fontSize.par};
-  font-weight: ${styles.fontWeight.bold};
-  font-family: ${styles.fontFam};
-  color: ${styles.colors.secondary};
-  text-align: left;
-  margin: 0px;
-`;
-
 export const TagContainer = styled.div`
-  display: inline-flex;
+  display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 3% 0%;
   font-size: ${styles.fontSize.small};
   height: min-content;
   flex-wrap: wrap;
-  width: 100%;
 
   @media (max-width: 990px) {
     justify-content: center;
     align-items: center;
   }
+`;
+
+export const EpisodesContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1%;
+  margin-top: 1%;
+  border-top: 1px solid ${styles.colors.border};
+
+  @media (max-width: 900px) {
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const Episode = styled.div`
+  min-width: fit-content;
+  width: 30%;
+  margin: 1%;
+`;
+
+export const FavoriteTag = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: ${styles.fontSize.small};
+  font-weight: ${styles.fontWeight.bold};
+  font-family: ${styles.fontFam};
+  color: ${styles.colors.secondary};
+  background-color: ${styles.colors.alter};
+  text-align: left;
+  width: 10%;
+  min-width: fit-content;
+  flex-wrap: wrap;
+  padding: 0.5em 2em;
+  box-sizing: border-box;
+  margin: 0px;
+  margin-bottom: 15px;
+  border-radius: 10px 100px / 120px;
 `;

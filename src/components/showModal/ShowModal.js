@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Backdrop,
   ModalContainer,
@@ -7,6 +7,11 @@ import {
 } from "./ShowModal-styles";
 
 function ShowModal(props) {
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
   let closeModal = () => {
     props.toggleModal();
   };
@@ -14,7 +19,7 @@ function ShowModal(props) {
   return (
     <>
       <ModalContainer>
-        <CloseIcon onClick={closeModal}/>
+        <CloseIcon onClick={closeModal} />
         <ModalData>{props.children}</ModalData>
       </ModalContainer>
       <Backdrop onClick={closeModal} />

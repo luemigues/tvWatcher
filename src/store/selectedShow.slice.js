@@ -12,8 +12,12 @@ const selectedShow = createSlice({
     removeSelectedShow: (state) => {
       state.value = {};
     },
+    addPrevEpisode: (state, action) => {
+      state.value = { ...state.value ,
+        prevEpisode: action.payload };
+    },
   },
 });
 
-export const { selectShow, removeSelectedShow } = selectedShow.actions;
+export const { selectShow, removeSelectedShow, addPrevEpisode } = selectedShow.actions;
 export default selectedShow.reducer;

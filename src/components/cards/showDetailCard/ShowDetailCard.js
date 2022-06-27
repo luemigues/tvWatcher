@@ -6,36 +6,45 @@ import {
   Rating,
   Title,
   MainInfoContainer,
-  Year,
   Summary,
-  Aired,
   Image,
   TagContainer,
   EpisodesContainer,
   Episode,
+  FavoriteTag,
+  MoreInfo,
 } from "./ShowDetailCard-styles";
 import GenreTag from "../../global/genreTag/GenreTag";
 import EpisodeCard from "../episodeCard/EpisodeCard";
 
 function ShowDetailCard(props) {
   let show = props.show.show;
+  let year = show.premiered;
+  let summary = show.summary;
 
   return (
     <>
       <MainInfoContainer>
-        <ImageContainer {...props}>
-          <Image src={show.image.medium} />
-          <Shadow>
-            <Rating>{show.rating.average && `★ ${show.rating.average}`}</Rating>
-          </Shadow>
-        </ImageContainer>
+        {show.image && (
+          <ImageContainer {...props}>
+            <Image src={show.image.medium} />
+            <Shadow>
+              <Rating>
+                {show.rating.average && `★ ${show.rating.average}`}
+              </Rating>
+            </Shadow>
+          </ImageContainer>
+        )}
         <DetailsContainer>
+          {props.fav && <FavoriteTag>Saved to favorites</FavoriteTag>}
           <Title>{show.name}</Title>
-          <Year>{show.premiered.split("-")[0]}</Year>
-          <Summary>
-            {show.summary.replace("<p>", "").replace("</p>", "")}
-          </Summary>
-          <Aired>{show.network && show.network.name}</Aired>
+          <MoreInfo>
+            {year && year.split("-")[0]}{" "}
+            {show.network && `| ${show.network.name}`}
+          </MoreInfo>
+          {summary && (
+            <Summary>{show.summary.replace(/<[^>]*>?/gm, "")}</Summary>
+          )}
           {show.genres && (
             <TagContainer>
               {show.genres.map((genre) => {
@@ -45,13 +54,16 @@ function ShowDetailCard(props) {
           )}
         </DetailsContainer>
       </MainInfoContainer>
-      <EpisodesContainer>
-        {props.prevEpisode && (
+      {props.show.prevEpisode && (
+        <EpisodesContainer>
           <Episode>
-            <EpisodeCard title="Previous episode" episode={props.prevEpisode} />
+            <EpisodeCard
+              title="Previous episode"
+              episode={props.show.prevEpisode}
+            />
           </Episode>
-        )}
-      </EpisodesContainer>
+        </EpisodesContainer>
+      )}
     </>
   );
 }
