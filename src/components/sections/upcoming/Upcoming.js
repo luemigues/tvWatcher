@@ -12,27 +12,24 @@ function UpcomingSection(props) {
   let dispatch = useDispatch();
 
   useEffect(() => {
-    let count = 0;
     let getSchedule = async () => {
       let fullSchdule = await tvMaze.getFullSchedule();
-      let upcomingFavs = helpers.filterFavoriteEpisodes(fullSchdule, favorites);
-      dispatch(saveSchedule(upcomingFavs));
-      count++;
-    };
+        let upcomingFavs = helpers.filterFavoriteEpisodes(
+          fullSchdule,
+          favorites
+        );
 
-    let renewschedule = helpers.renewSchedule(schedule);
-    if (renewschedule) {
-      getSchedule();
-    }
-    console.log(count);
-  }, [dispatch, schedule, favorites]);
+        dispatch(saveSchedule(upcomingFavs));
+    };
+    getSchedule();
+  }, []);
 
   useEffect(() => {
     if (schedule.length > 0) {
       let upcoming = helpers.getUpcomingEpisodes(schedule);
       setFutureEpisodes(upcoming);
-      console.log(upcoming);
     }
+
   }, [schedule]);
 
   return (

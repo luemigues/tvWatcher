@@ -9,6 +9,7 @@ const helpers = {
   },
 
   filterFavoriteEpisodes(schedule, favs) {
+
     let favEpisodes = schedule.filter((schtv) => {
       let showIsFav = favs.find((fav) => {
         let airdate = new Date(schtv.airstamp);
@@ -36,14 +37,15 @@ const helpers = {
   },
 
   getUpcomingEpisodes(favEpisodes) {
+    let episodes = [...favEpisodes];
     let nextEpisodes = [];
 
-    if (favEpisodes.length > 0) {
-      favEpisodes = favEpisodes.sort(function (a, b) {
+    if (episodes.length > 0) {
+      episodes = episodes.sort(function (a, b) {
         return new Date(b.airstamp) + new Date(a.airstamp);
       });
 
-      for (let episode of favEpisodes) {
+      for (let episode of episodes) {
         let episodeIsAdded =
           nextEpisodes.findIndex(
             (item) => episode._embedded.show.id === item._embedded.show.id

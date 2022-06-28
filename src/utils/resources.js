@@ -1,11 +1,11 @@
-import axios from "axios";
 const url = process.env.REACT_APP_APIURL;
 
 const tvMaze = {
   async search(query) {
     try {
-      let results = await axios.get(`${url}/search/shows?q=${query}`);
-      return results.data;
+      let results = await fetch(`${url}/search/shows?q=${query}`);
+      let shows = await results.json();
+      return shows;
     } catch (error) {
       throw error.message;
     }
@@ -13,8 +13,9 @@ const tvMaze = {
 
   async getEpisode(id) {
     try {
-      let results = await axios.get(`${url}/episodes/${id}`);
-      return results.data;
+      let results = await fetch(`${url}/episodes/${id}`);
+      let episode = await results.json();
+      return episode;
     } catch (error) {
       throw error.message;
     }
@@ -22,8 +23,12 @@ const tvMaze = {
 
   async getFullSchedule() {
     try {
-      let results = await axios.get(`${url}/schedule/full`);
-      return results.data;
+      let response = await fetch(`${url}/schedule/full`, {
+        cache: "default",
+      });
+
+      let schedule = await response.json();
+      return schedule;
     } catch (error) {
       throw error.message;
     }
