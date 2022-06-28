@@ -19,6 +19,15 @@ const tvMaze = {
       throw error.message;
     }
   },
+
+  async getFullSchedule() {
+    try {
+      let results = await axios.get(`${url}/schedule/full`);
+      return results.data;
+    } catch (error) {
+      throw error.message;
+    }
+  },
 };
 
 export default tvMaze;

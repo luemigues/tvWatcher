@@ -83,10 +83,5 @@ export const FavIconWrapper = styled.div`
     color: ${styles.colors.alter};
     webkit-filter: drop-shadow(1px 7px 19px #000);
     filter: drop-shadow(1px 7px 19px #000);
-
-    @media (max-width: 990px) {
-      height: 10px;
-      width: 10px;
-    }
   }
 `;
