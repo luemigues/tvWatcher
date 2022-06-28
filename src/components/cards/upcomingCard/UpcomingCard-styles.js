@@ -3,13 +3,29 @@ import { styles } from "../../../utils/defaultStyles";
 
 export const EpisodeContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  flex-direction: column;
   box-sizing: border-box;
-  width: 100%;
   min-width: fit-content;
 `;
+
+export const ImageContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  position: inherit;
+  max-width: 250px;
+  max-height: 200px;
+`;
+
+export const Image = styled.img`
+  object-fit: contain;
+  width: 100%; /* or any custom size */
+  height: 100%;
+`;
+
 
 export const Header = styled.div`
   display: flex;
@@ -20,7 +36,7 @@ export const Header = styled.div`
   background-color: ${styles.colors.secondary};
   border: 1px solid ${styles.colors.secondary};
   border-radius: 10px 10px 0px 0px;
-  padding: 15px;
+  padding: 4%;
   box-sizing: border-box;
 
   font-size: inherit;
@@ -36,7 +52,7 @@ export const EpisodeDetails = styled.div`
   flex-direction: column;
   height: fit-content;
   box-sizing: border-box;
-  padding: 30px;
+  padding: 7%;
   width: 100%;
   border: 1px solid ${styles.colors.border};
   border-radius: 0px 0px 10px 10px;

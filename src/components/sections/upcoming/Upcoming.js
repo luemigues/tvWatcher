@@ -1,42 +1,40 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "./Upcoming-styles";
+import { Container, EpisodesContainer } from "./Upcoming-styles";
 import { useSelector, useDispatch } from "react-redux";
-import { saveSchedule } from "../../../store/schedule.slice";
-import tvMaze from "../../../utils/resources";
+import { fetchUpcomingEpisodes } from "../../../store/schedule.slice";
 import helpers from "../../../utils/helpers";
+import SectionHeader from "../../sectionHeader/SectionHeader";
+import UpcomingCard from "../../cards/upcomingCard/UpcomingCard";
 
 function UpcomingSection(props) {
   let [futureEpisodes, setFutureEpisodes] = useState([]);
-  const favorites = useSelector((state) => state.favorites.value);
-  const schedule = useSelector((state) => state.schedule.value);
+  let schedule = useSelector((state) => state.schedule.value);
   let dispatch = useDispatch();
 
   useEffect(() => {
-    let getSchedule = async () => {
-      let fullSchdule = await tvMaze.getFullSchedule();
-        let upcomingFavs = helpers.filterFavoriteEpisodes(
-          fullSchdule,
-          favorites
-        );
-
-        dispatch(saveSchedule(upcomingFavs));
+    let getFullSchedule = async () => {
+      dispatch(fetchUpcomingEpisodes(props.favorites));
     };
-    getSchedule();
-  }, []);
+
+    getFullSchedule();
+  }, [props, dispatch]);
 
   useEffect(() => {
     if (schedule.length > 0) {
       let upcoming = helpers.getUpcomingEpisodes(schedule);
       setFutureEpisodes(upcoming);
     }
-
   }, [schedule]);
 
   return (
     <Container>
-      {futureEpisodes.map((episode) => (
-        <div key={episode.id}>{episode.name}</div>
-      ))}
+      <SectionHeader title="See what's coming up on your favorite shows!" />
+      <EpisodesContainer>
+        {futureEpisodes.map((episode) => {
+          console.log(episode);
+          return <UpcomingCard key={episode.id} episode={episode} />;
+        })}
+      </EpisodesContainer>
     </Container>
   );
 }

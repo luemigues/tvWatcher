@@ -23,6 +23,7 @@ export const ImageContainer = styled.div`
   align-items: center;
   flex-direction: column;
   position: inherit;
+  margin-bottom: 20px;
 `;
 
 export const Image = styled.img`
@@ -122,8 +123,8 @@ export const EpisodesContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 1%;
-  margin-top: 1%;
+  padding: 20px 1%;
+  margin-top: 20px;
   border-top: 1px solid ${styles.colors.border};
 
   @media (max-width: 900px) {
@@ -136,6 +137,7 @@ export const Episode = styled.div`
   min-width: fit-content;
   width: 30%;
   margin: 1%;
+  max-width: 50%;
 `;
 
 export const FavoriteTag = styled.div`
