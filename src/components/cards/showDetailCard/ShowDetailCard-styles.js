@@ -7,7 +7,7 @@ export const MainInfoContainer = styled.div`
   align-items: flex-start;
   max-width: 100%;
   flex-wrap: wrap;
-  padding: 1%;
+  padding: 20px 1%;
   position: relative;
   box-sizing: border-box;
 
@@ -40,7 +40,6 @@ export const Shadow = styled.div`
   max-width: 100%;
   min-width: 100%;
   min-height: 40%;
-  padding: 15px 8px;
   background-image: linear-gradient(
     to bottom,
     rgb(27, 26, 23, 0),
@@ -123,7 +122,7 @@ export const EpisodesContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 20px 1%;
+  padding: 10px 1%;
   margin-top: 20px;
   border-top: 1px solid ${styles.colors.border};
 

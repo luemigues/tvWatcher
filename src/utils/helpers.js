@@ -1,6 +1,6 @@
 const helpers = {
   formatDate(date) {
-    let formattedDate = new Date(date).toLocaleDateString("en-US", {
+    let formattedDate = new Date(date).toLocaleDateString("en-GB", {
       day: "numeric",
       year: "numeric",
       month: "short",
@@ -9,7 +9,7 @@ const helpers = {
   },
 
   getTime(date) {
-    let formattedDate = new Date(date).toLocaleString("en-US", {
+    let formattedDate = new Date(date).toLocaleTimeString("en-GB", {
       hour: "numeric",
       hour12: true,
     });
@@ -64,6 +64,10 @@ const helpers = {
     }
 
     return nextEpisodes;
+  },
+
+  isFavorite(favorites, id) {
+    return favorites.findIndex((favShow) => favShow.show.id === id) > -1;
   },
 };
 

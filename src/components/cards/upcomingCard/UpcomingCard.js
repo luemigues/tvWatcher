@@ -20,8 +20,8 @@ function UpcomingCard({ episode }) {
   let header = (
     <Header>
       <CalendarIcon />
-      <Date>{helpers.formatDate(episode.airdate)}</Date>
-      <Time>{helpers.getTime(episode.airdate)}</Time>
+      <Date>{helpers.formatDate(episode.airstamp)}</Date>
+      <Time>{helpers.getTime(episode.airstamp)}</Time>
     </Header>
   );
 
