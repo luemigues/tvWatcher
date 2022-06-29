@@ -3,13 +3,15 @@ import { styles } from "../../utils/defaultStyles";
 
 export const Header = styled.header`
   height: 56px;
-  width: -webkit-fill-available;
-  padding: 0% 4%;
+  width: 100%;
+  max-width: 100vw;
+  padding: 0px 20px;
   position: fixed;
+  box-sizing: border-box;
 
   border: 1px solid ${styles.colors.border};
   background: #ffffff 0% 0% no-repeat padding-box;
-  opacity: 1;
+
   backdrop-filter: blur(31px);
   -webkit-backdrop-filter: blur(31px);
 

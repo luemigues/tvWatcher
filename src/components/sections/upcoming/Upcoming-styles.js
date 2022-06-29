@@ -9,4 +9,5 @@ export const EpisodesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 30px 5%;
+  justify-content: center;
 `;
