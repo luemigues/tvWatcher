@@ -4,25 +4,49 @@ import {
   Header,
   EpisodeDetails,
   Date,
+  Time,
   EpisodeInfo,
   ImageContainer,
   Image,
+  CalendarIcon,
+  Title,
+  Number,
+  Summary,
 } from "./UpcomingCard-styles";
-import defaultImg from "../../../assets/logo512.png"
+import defaultImg from "../../../assets/logo512.png";
+import helpers from "../../../utils/helpers";
+import CardBackground from "../../global/showBackground/ShowBackground";
 
-function UpcomingCard({episode}) {
+function UpcomingCard({ episode }) {
+  let showInfo = episode._embedded.show;
+  let season = episode.season && `S${episode.season}`;
+  let epidode = episode.number && `E${episode.number}`;
 
+  let header = (
+    <Header>
+      <CalendarIcon />
+      <Date>{helpers.formatDate(episode.airdate)}</Date>
+      <Time>{helpers.getTime(episode.airdate)}</Time>
+    </Header>
+  );
+
+  let details = (
+    <EpisodeInfo>
+      <Title>{episode.name}</Title>
+      <Number>
+        {season} {epidode}
+      </Number>
+    </EpisodeInfo>
+  );
 
   return (
     <EpisodeContainer>
-      <ImageContainer>
-        <Image src={episode.image ? episode.image.medium : defaultImg} />
-      </ImageContainer>
-      <Header>{episode.title}</Header>
-      <EpisodeDetails>
-        <EpisodeInfo>{episode.name}</EpisodeInfo>
-        <Date></Date>
-      </EpisodeDetails>
+      <CardBackground
+        header={header}
+        details={details}
+        image={showInfo.image}
+        opacity="0.4"
+      />
     </EpisodeContainer>
   );
 }

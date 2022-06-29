@@ -1,6 +1,6 @@
 const helpers = {
   formatDate(date) {
-    let formattedDate = new Date(date).toLocaleDateString("en-us", {
+    let formattedDate = new Date(date).toLocaleDateString("en-US", {
       day: "numeric",
       year: "numeric",
       month: "short",
@@ -8,8 +8,15 @@ const helpers = {
     return formattedDate;
   },
 
-  filterFavoriteEpisodes(schedule, favs) {
+  getTime(date) {
+    let formattedDate = new Date(date).toLocaleString("en-US", {
+      hour: "numeric",
+      hour12: true,
+    });
+    return formattedDate;
+  },
 
+  filterFavoriteEpisodes(schedule, favs) {
     let favEpisodes = schedule.filter((schtv) => {
       let showIsFav = favs.find((fav) => {
         let airdate = new Date(schtv.airstamp);

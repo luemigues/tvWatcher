@@ -9,28 +9,37 @@ import {
   TopShading,
 } from "./ShowCard-styles";
 import { FavoriteBorder, Favorite } from "@styled-icons/material";
+import CardBackground from "../../global/showBackground/ShowBackground";
+import { Retroarch } from "styled-icons/simple-icons";
 
 function ShowCard(props) {
-  return (
-    <Container
-      {...props}
-      onClick={(e) => props.handleOnClick(e, props.show.id)}
+  let header = (
+    <FavIconWrapper
+      name="favIcon"
+      onClick={() => props.handleFavorite(props.show.id)}
     >
-      <TopShading>
-        <FavIconWrapper
-          name="favIcon"
-          onClick={() => props.handleFavorite(props.show.id)}
-        >
-          {props.fav ? <Favorite /> : <FavoriteBorder />}
-        </FavIconWrapper>
-      </TopShading>
-      <Details>
-        <Info>
-          <Title>{props.show.name}</Title>
-        </Info>
-        <Rating>{props.show.rating.average && `★ ${props.show.rating.average}`}</Rating>
-      </Details>
-    </Container>
+      {props.fav ? <Favorite /> : <FavoriteBorder />}
+    </FavIconWrapper>
+  );
+
+  let details = (
+    <>
+      <Info>
+        <Title>{props.show.name}</Title>
+      </Info>
+      <Rating>
+        {props.show.rating.average && `★ ${props.show.rating.average}`}
+      </Rating>
+    </>
+  );
+
+  return (
+    <CardBackground
+      handleOnClick={props.handleOnClick}
+      header={header}
+      details={details}
+      image={props.show.image}
+    />
   );
 }
 

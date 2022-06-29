@@ -31,7 +31,6 @@ function UpcomingSection(props) {
       <SectionHeader title="See what's coming up on your favorite shows!" />
       <EpisodesContainer>
         {futureEpisodes.map((episode) => {
-          console.log(episode);
           return <UpcomingCard key={episode.id} episode={episode} />;
         })}
       </EpisodesContainer>

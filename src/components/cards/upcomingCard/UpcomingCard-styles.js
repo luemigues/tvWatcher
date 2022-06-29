@@ -1,79 +1,79 @@
 import styled from "styled-components";
 import { styles } from "../../../utils/defaultStyles";
+import { CalendarHeart } from "@styled-icons/boxicons-regular/CalendarHeart";
 
 export const EpisodeContainer = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   box-sizing: border-box;
-  min-width: fit-content;
+  border-radius: 10px 10px 10px 10px;
+  border: 2px solid ${styles.colors.border};
+  flex-wrap: wrap;
+  width: 240px;
+  height 345px;
 `;
-
-export const ImageContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: column;
-  position: inherit;
-  max-width: 250px;
-  max-height: 200px;
-`;
-
-export const Image = styled.img`
-  object-fit: contain;
-  width: 100%; /* or any custom size */
-  height: 100%;
-`;
-
 
 export const Header = styled.div`
+  padding: 15px;
+  box-sizing: border-box;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  height: fit-content;
-  width: 100%;
-  background-color: ${styles.colors.secondary};
-  border: 1px solid ${styles.colors.secondary};
-  border-radius: 10px 10px 0px 0px;
-  padding: 4%;
-  box-sizing: border-box;
-
-  font-size: inherit;
-  font-weight: ${styles.fontWeight.reg};
-  font-family: ${styles.fontFam};
-  color: ${styles.colors.alter};
-`;
-
-export const EpisodeDetails = styled.div`
-  display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  height: fit-content;
-  box-sizing: border-box;
-  padding: 7%;
-  width: 100%;
-  border: 1px solid ${styles.colors.border};
-  border-radius: 0px 0px 10px 10px;
-`;
 
-export const EpisodeInfo = styled.div`
-  font-size: ${styles.fontSize.reg};
+  font-size: ${styles.fontSize.big};
   font-weight: ${styles.fontWeight.bold};
   font-family: ${styles.fontFam};
   color: ${styles.colors.main};
-  box-sizing: border-box;
-  overflow-wrap: auto;
-  text-align: left;
 `;
 
 export const Date = styled.div`
-  font-size: ${styles.fontSize.par};
-  font-weight: ${styles.fontWeight.reg};
+  font-size: ${styles.fontSize.reg};
+  font-weight: ${styles.fontWeight.bold};
   font-family: ${styles.fontFam};
-  color: ${styles.colors.main};
-  margin-top: 0px;
+  color: ${styles.colors.alter};
+  margin-right: 10px;
   box-sizing: border-box;
   overflow-wrap: break-word;
+`;
+
+export const Time = styled.div`
+  font-size: ${styles.fontSize.reg};
+  font-weight: ${styles.fontWeight.reg};
+  font-family: ${styles.fontFam};
+  color: ${styles.colors.alter};
+  margin-top: 0px;
+  box-sizing: border-box;
+`;
+
+export const Title = styled.div`
+  font-size: ${styles.fontSize.mid};
+  font-weight: ${styles.fontWeight.reg};
+  font-family: ${styles.fontFam};
+  color: ${styles.colors.alter};
+  margin-top: 10px;
+  box-sizing: border-box;
+`;
+
+export const Number = styled.div`
+  font-size: ${styles.fontSize.reg};
+  font-weight: ${styles.fontWeight.light};
+  font-family: ${styles.fontFam};
+  color: ${styles.colors.focus};
+  box-sizing: border-box;
+`;
+
+export const EpisodeInfo = styled.div`
+  padding: 5px 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+`;
+
+export const CalendarIcon = styled(CalendarHeart)`
+  width: ${styles.fontSize.big};
+  margin-right: 5px;
+  color: ${styles.colors.alter};
 `;
