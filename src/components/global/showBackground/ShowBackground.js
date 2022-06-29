@@ -10,7 +10,6 @@ function ShowBackground(props) {
   return (
     <Container
       {...props}
-      onClick={(e) => props.handleOnClick && props.handleOnClick(e, props.show.id)}
     >
       <Opacity opacity={props.opacity}>
         <TopShading>{props.header}</TopShading>

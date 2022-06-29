@@ -19,10 +19,9 @@ export const ModalContainer = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   padding: 1%;
-  width: 80%;
-  height: fit-content;
-  position: absolute;
-  top: 70px;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
 
   border-bottom: 1px solid ${styles.colors.border};
   background: #ffffff 0% 0% no-repeat padding-box;

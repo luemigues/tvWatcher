@@ -47,6 +47,8 @@ function ShowDisplay(props) {
   };
 
   let handleOnClick = (e, id) => {
+    console.log(e);
+
     if (
       e.target.parentElement.getAttribute("name") !== "favIcon" &&
       e.target.getAttribute("name") !== "favIcon"

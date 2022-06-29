@@ -15,7 +15,11 @@ function ShowCard(props) {
       name="favIcon"
       onClick={() => props.handleFavorite(props.show.id)}
     >
-      {props.fav ? <Favorite /> : <FavoriteBorder />}
+      {props.fav ? (
+        <Favorite name="favIcon" />
+      ) : (
+        <FavoriteBorder name="favIcon" />
+      )}
     </FavIconWrapper>
   );
 
@@ -31,9 +35,8 @@ function ShowCard(props) {
   );
 
   return (
-    <Container>
+    <Container onClick={(e) => props.handleOnClick(e, props.show.id)}>
       <CardBackground
-        handleOnClick={props.handleOnClick}
         header={header}
         details={details}
         image={props.show.image}
