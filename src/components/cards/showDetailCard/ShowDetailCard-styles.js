@@ -149,7 +149,7 @@ export const FavoriteTag = styled.div`
   font-family: ${styles.fontFam};
   color: ${styles.colors.secondary};
   background-color: ${styles.colors.alter};
-  text-align: left;
+  text-align: center;
   width: 10%;
   min-width: fit-content;
   flex-wrap: wrap;
