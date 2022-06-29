@@ -65,6 +65,14 @@ export const Number = styled.div`
   box-sizing: border-box;
 `;
 
+export const Channel = styled.div`
+  font-size: ${styles.fontSize.small};
+  font-weight: ${styles.fontWeight.reg};
+  font-family: ${styles.fontFam};
+  color: ${styles.colors.alter};
+  box-sizing: border-box;
+`;
+
 export const EpisodeInfo = styled.div`
   padding: 5px 15px;
   box-sizing: border-box;

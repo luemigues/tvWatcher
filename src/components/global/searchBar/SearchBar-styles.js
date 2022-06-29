@@ -9,6 +9,7 @@ export const Container = styled.div`
   border-radius: 30px;
   display: flex;
   align-items: center;
+  min-width: 30%;
 `;
 
 export const Input = styled.input`

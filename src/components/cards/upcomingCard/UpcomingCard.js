@@ -8,6 +8,7 @@ import {
   CalendarIcon,
   Title,
   Number,
+  Channel,
 } from "./UpcomingCard-styles";
 import helpers from "../../../utils/helpers";
 import CardBackground from "../../global/showBackground/ShowBackground";
@@ -27,6 +28,7 @@ function UpcomingCard({ episode }) {
 
   let details = (
     <EpisodeInfo>
+      {showInfo.network && <Channel>{showInfo.network.name}</Channel>}
       <Title>{episode.name}</Title>
       <Number>
         {season} {epidode}
