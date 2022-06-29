@@ -6,5 +6,5 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 70%;
-  margin-top: 30px;
+  margin-top: 20px;
 `;

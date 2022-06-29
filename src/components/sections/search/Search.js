@@ -32,8 +32,8 @@ function SearchSection(props) {
 
   return (
     <Container>
-      <SectionHeader title="Dont miss out on any updates from your favorite shows" />
-      <SearchBar handleSearch={handleSearch} margin="40px" />
+      <SectionHeader title="Don't miss out on any updates from your favorite shows" />
+      <SearchBar handleSearch={handleSearch} margin="5px" />
       <ResultText>{getText()}</ResultText>
       <ShowDisplay shows={showResults} />
     </Container>
