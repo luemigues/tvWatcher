@@ -7,7 +7,8 @@ export const fetchUpcomingEpisodes = createAsyncThunk(
   async (favs) => {
     try {
       const response = await tvMaze.getFullSchedule();
-      let upcoming = helpers.filterFavoriteEpisodes(response, favs);
+      let favoriteEps = helpers.filterFavoriteEpisodes(response, favs);
+      let upcoming = helpers.getUpcomingEpisodes(favoriteEps);
       return upcoming;
     } catch (err) {
       console.log(err);
