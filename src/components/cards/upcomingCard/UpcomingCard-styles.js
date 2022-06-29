@@ -12,6 +12,7 @@ export const EpisodeContainer = styled.div`
   flex-wrap: wrap;
   width: 240px;
   height 345px;
+  margin: 1%;
 `;
 
 export const Header = styled.div`
