@@ -8,6 +8,7 @@ export const MainInfoContainer = styled.div`
   max-width: 100%;
   flex-wrap: wrap;
   padding: 20px 1%;
+  padding-bottom: 0px;
   position: relative;
   box-sizing: border-box;
 
@@ -48,6 +49,7 @@ export const Shadow = styled.div`
   position: absolute;
   botton: 0px;
   left: 0px;
+  padding: 10%;
 `;
 
 export const Rating = styled.p`
