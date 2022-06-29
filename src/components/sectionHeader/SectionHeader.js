@@ -1,11 +1,33 @@
 import React from "react";
-import { Container, CoverImage, SectionTitle } from "./SectionHeader-styles";
-import coverImage from "../../assets/cover.png";
+import {
+  Container,
+  SectionTitle,
+  CoverContainer,
+  VerticalDiv,
+  SvgContainer,
+} from "./SectionHeader-styles";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
 
 function SectionHeader(props) {
+  let random = () => Math.floor(Math.random() * (4 - 1) + 1);
+
   return (
     <Container>
-      <CoverImage src={coverImage} {...props} alt="cover with tv graphics" />;
+      <CoverContainer>
+        {[...Array(30)].map((n, i) => {
+          return (
+            <VerticalDiv key={i}>
+              {[...Array(random())].map((n, i) => {
+                return (
+                  <SvgContainer key={i}>
+                    <Logo />
+                  </SvgContainer>
+                );
+              })}
+            </VerticalDiv>
+          );
+        })}
+      </CoverContainer>
       <SectionTitle {...props}>{props.title}</SectionTitle>
     </Container>
   );

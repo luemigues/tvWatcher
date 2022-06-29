@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const AppContainer = styled.div`
   text-align: center;
-  min-width: 320px;
+  max-width: 100vw;
 `;
 
 export default AppContainer;

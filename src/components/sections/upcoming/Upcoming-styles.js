@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
+`;
+
+export const EpisodesContainer = styled.div`
+  display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 70%;
-  margin-top: 20px;
+  margin: 30px 5%;
 `;

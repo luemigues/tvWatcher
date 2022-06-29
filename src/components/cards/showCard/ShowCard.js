@@ -1,35 +1,46 @@
 import React from "react";
 import {
   Container,
-  Details,
   Info,
   Rating,
   Title,
   FavIconWrapper,
-  TopShading,
 } from "./ShowCard-styles";
 import { FavoriteBorder, Favorite } from "@styled-icons/material";
+import CardBackground from "../../global/showBackground/ShowBackground";
 
 function ShowCard(props) {
-  return (
-    <Container
-      {...props}
-      onClick={(e) => props.handleOnClick(e, props.show.id)}
+  let header = (
+    <FavIconWrapper
+      name="favIcon"
+      onClick={() => props.handleFavorite(props.show.id)}
     >
-      <TopShading>
-        <FavIconWrapper
-          name="favIcon"
-          onClick={() => props.handleFavorite(props.show.id)}
-        >
-          {props.fav ? <Favorite /> : <FavoriteBorder />}
-        </FavIconWrapper>
-      </TopShading>
-      <Details>
-        <Info>
-          <Title>{props.show.name}</Title>
-        </Info>
-        <Rating>{props.show.rating.average && `★ ${props.show.rating.average}`}</Rating>
-      </Details>
+      {props.fav ? (
+        <Favorite name="favIcon" />
+      ) : (
+        <FavoriteBorder name="favIcon" />
+      )}
+    </FavIconWrapper>
+  );
+
+  let details = (
+    <>
+      <Info>
+        <Title>{props.show.name}</Title>
+      </Info>
+      <Rating>
+        {props.show.rating.average && `★ ${props.show.rating.average}`}
+      </Rating>
+    </>
+  );
+
+  return (
+    <Container onClick={(e) => props.handleOnClick(e, props.show.id)}>
+      <CardBackground
+        header={header}
+        details={details}
+        image={props.show.image}
+      />
     </Container>
   );
 }

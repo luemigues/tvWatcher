@@ -3,34 +3,10 @@ import { styles } from "../../../utils/defaultStyles";
 import { StyledIconBase } from "@styled-icons/styled-icon";
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-direction: column;
+  
   height: 14rem;
   width: 10rem;
-  background: no-repeat;
-  background-image: url(${(props) =>
-    props.show.image && props.show.image.medium});
-  background-color: rgb(27, 26, 23, 0.5);
-  background-size: contain;
   margin: 1%;
-`;
-
-export const Details = styled.div`
-  display: flex;
-  box-sizing: border-box;
-  align-items: flex-end;
-  justify-content: space-between;
-  max-width: 100%;
-  min-width: 100%;
-  min-height: 40%;
-  padding: 15px 8px;
-  background-image: linear-gradient(
-    to bottom,
-    rgb(27, 26, 23, 0),
-    rgb(27, 26, 23, 1)
-  );
 `;
 
 export const Info = styled.div`
@@ -63,15 +39,6 @@ export const Title = styled.h2`
   max-width: 60%;
 `;
 
-export const TopShading = styled.div`
-  background-image: linear-gradient(
-    to top,
-    rgb(27, 26, 23, 0),
-    rgb(27, 26, 23, 0.5)
-  );
-  width: 100%;
-`;
-
 export const FavIconWrapper = styled.div`
   width: fit-content;
   float: right;
@@ -83,10 +50,5 @@ export const FavIconWrapper = styled.div`
     color: ${styles.colors.alter};
     webkit-filter: drop-shadow(1px 7px 19px #000);
     filter: drop-shadow(1px 7px 19px #000);
-
-    @media (max-width: 990px) {
-      height: 10px;
-      width: 10px;
-    }
   }
 `;

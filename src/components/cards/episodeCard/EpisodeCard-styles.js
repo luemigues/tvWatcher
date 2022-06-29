@@ -20,7 +20,7 @@ export const Header = styled.div`
   background-color: ${styles.colors.secondary};
   border: 1px solid ${styles.colors.secondary};
   border-radius: 10px 10px 0px 0px;
-  padding: 4%;
+  padding: 15px;
   box-sizing: border-box;
 
   font-size: inherit;
@@ -36,7 +36,7 @@ export const EpisodeDetails = styled.div`
   flex-direction: column;
   height: fit-content;
   box-sizing: border-box;
-  padding: 7%;
+  padding: 30px;
   width: 100%;
   border: 1px solid ${styles.colors.border};
   border-radius: 0px 0px 10px 10px;

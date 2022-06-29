@@ -7,7 +7,8 @@ export const MainInfoContainer = styled.div`
   align-items: flex-start;
   max-width: 100%;
   flex-wrap: wrap;
-  padding: 1%;
+  padding: 20px 1%;
+  padding-bottom: 0px;
   position: relative;
   box-sizing: border-box;
 
@@ -23,6 +24,7 @@ export const ImageContainer = styled.div`
   align-items: center;
   flex-direction: column;
   position: inherit;
+  margin-bottom: 20px;
 `;
 
 export const Image = styled.img`
@@ -39,7 +41,6 @@ export const Shadow = styled.div`
   max-width: 100%;
   min-width: 100%;
   min-height: 40%;
-  padding: 15px 8px;
   background-image: linear-gradient(
     to bottom,
     rgb(27, 26, 23, 0),
@@ -48,6 +49,7 @@ export const Shadow = styled.div`
   position: absolute;
   botton: 0px;
   left: 0px;
+  padding: 10%;
 `;
 
 export const Rating = styled.p`
@@ -100,7 +102,6 @@ export const MoreInfo = styled.div`
   font-weight: ${styles.fontWeight.light};
   font-family: ${styles.fontFam};
   color: ${styles.colors.dark};
-  line-height: ${styles.fontSize.par};
   margin: 0px;
 `;
 
@@ -122,8 +123,8 @@ export const EpisodesContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 1%;
-  margin-top: 1%;
+  padding: 10px 1%;
+  margin-top: 20px;
   border-top: 1px solid ${styles.colors.border};
 
   @media (max-width: 900px) {
@@ -136,6 +137,7 @@ export const Episode = styled.div`
   min-width: fit-content;
   width: 30%;
   margin: 1%;
+  max-width: 50%;
 `;
 
 export const FavoriteTag = styled.div`
