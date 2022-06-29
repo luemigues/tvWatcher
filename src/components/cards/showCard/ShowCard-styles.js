@@ -3,10 +3,10 @@ import { styles } from "../../../utils/defaultStyles";
 import { StyledIconBase } from "@styled-icons/styled-icon";
 
 export const Container = styled.div`
-  
   height: 14rem;
   width: 10rem;
   margin: 1%;
+  cursor: pointer;
 `;
 
 export const Info = styled.div`

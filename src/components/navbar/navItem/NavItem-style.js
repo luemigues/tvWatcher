@@ -21,6 +21,9 @@ export const IconStyleWrapper = styled.div`
 export const StyledLink = styled(NavLink).attrs({
   activeClassName,
 })`
+  color: ${styles.colors.main};
+  text-decoration: inherit;
+
   &:hover,
   &:active {
     color: ${styles.colors.secondary};

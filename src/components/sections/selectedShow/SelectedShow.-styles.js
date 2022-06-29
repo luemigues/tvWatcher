@@ -46,6 +46,7 @@ export const Navegation = styled.div`
   align-items: center;
   justify-content: flex-start;
   margin: 15px 5px;
+  cursor: pointer;
   ,
 `;
 
