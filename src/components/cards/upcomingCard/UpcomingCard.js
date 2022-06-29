@@ -2,18 +2,13 @@ import React from "react";
 import {
   EpisodeContainer,
   Header,
-  EpisodeDetails,
   Date,
   Time,
   EpisodeInfo,
-  ImageContainer,
-  Image,
   CalendarIcon,
   Title,
   Number,
-  Summary,
 } from "./UpcomingCard-styles";
-import defaultImg from "../../../assets/logo512.png";
 import helpers from "../../../utils/helpers";
 import CardBackground from "../../global/showBackground/ShowBackground";
 
