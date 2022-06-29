@@ -53,6 +53,7 @@ export const Title = styled.div`
   color: ${styles.colors.alter};
   margin-top: 10px;
   box-sizing: border-box;
+  text-align: left;
 `;
 
 export const Number = styled.div`

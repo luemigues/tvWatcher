@@ -1,16 +1,13 @@
 import React from "react";
 import {
   Container,
-  Details,
   Info,
   Rating,
   Title,
   FavIconWrapper,
-  TopShading,
 } from "./ShowCard-styles";
 import { FavoriteBorder, Favorite } from "@styled-icons/material";
 import CardBackground from "../../global/showBackground/ShowBackground";
-import { Retroarch } from "styled-icons/simple-icons";
 
 function ShowCard(props) {
   let header = (
@@ -34,12 +31,14 @@ function ShowCard(props) {
   );
 
   return (
-    <CardBackground
-      handleOnClick={props.handleOnClick}
-      header={header}
-      details={details}
-      image={props.show.image}
-    />
+    <Container>
+      <CardBackground
+        handleOnClick={props.handleOnClick}
+        header={header}
+        details={details}
+        image={props.show.image}
+      />
+    </Container>
   );
 }
 
