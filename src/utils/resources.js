@@ -28,7 +28,6 @@ const tvMaze = {
       });
 
       let schedule = await response.json();
-      console.log('res');
       return schedule;
     } catch (error) {
       throw error.message;

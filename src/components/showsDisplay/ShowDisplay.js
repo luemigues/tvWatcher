@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Container } from "./ShowDisplay-styles";
 import ShowCard from "../cards/showCard/ShowCard";
+import SelectedShow from "../sections/selectedShow/SelectedShow";
 import { useSelector, useDispatch } from "react-redux";
 import { addFavorite, removeFavorite } from "../../store/favorite.slice";
 import { selectShow, addPrevEpisode } from "../../store/selectedShow.slice";
@@ -9,16 +10,16 @@ import helpers from "../../utils/helpers";
 
 function ShowDisplay(props) {
   const favorites = useSelector((state) => state.favorites.value);
-  const selectedShow = useSelector((state) => state.selectedShow.value);
+  const selectedShow = useSelector((state) => state.selectedShow);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (selectedShow.show) {
+    if (selectedShow.value.show) {
       let loadPrevEpisode = async () => {
-        let url = selectedShow.show._links.previousepisode;
+        let url = selectedShow.value.show._links.previousepisode;
         if (url) {
           let splitUrl =
-            selectedShow.show._links.previousepisode.href.split("/");
+            selectedShow.value.show._links.previousepisode.href.split("/");
           let episodeId = splitUrl[splitUrl.length - 1];
 
           let episode = await tvMaze.getEpisode(episodeId);
@@ -53,6 +54,8 @@ function ShowDisplay(props) {
 
   return (
     <Container>
+      {selectedShow.isSelected && <SelectedShow />}
+
       {props.shows.map((show) => {
         let isFav = helpers.isFavorite(favorites, show.show.id);
 

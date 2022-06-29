@@ -102,7 +102,6 @@ export const MoreInfo = styled.div`
   font-weight: ${styles.fontWeight.light};
   font-family: ${styles.fontFam};
   color: ${styles.colors.dark};
-  line-height: ${styles.fontSize.par};
   margin: 0px;
 `;
 

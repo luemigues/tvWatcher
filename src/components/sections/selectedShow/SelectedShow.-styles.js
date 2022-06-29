@@ -18,14 +18,17 @@ export const ModalContainer = styled.div`
   border-bottom: 1px solid ${styles.colors.border};
   background: #ffffff 0% 0% no-repeat padding-box;
   opacity: 1;
-  backdrop-filter: blur(31px);
-  -webkit-backdrop-filter: blur(31px);
-  -webkit-box-shadow: -1px 1px 50px -4px rgba(0, 0, 0, 0.45);
-  box-shadow: -1px 1px 50px -4px rgba(0, 0, 0, 0.45);
-  border-radius: 2%/3%;
   box-sizing: border-box;
 
   z-index: 150;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    display: none;
+  }
 `;
 
 export const ModalData = styled.div`

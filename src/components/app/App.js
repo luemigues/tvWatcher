@@ -1,15 +1,23 @@
 import AppContainer from "./App-styles";
 import { Routes, Route } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { removeSelectedShow } from "../../store/selectedShow.slice"
 import Navbar from "../navbar/Navbar";
 import SearchSection from "../sections/search/Search";
 import FavoritesSection from "../sections/favorites/Favorites";
 import UpcomingSection from "../sections/upcoming/Upcoming";
-import SelectedShow from "../sections/selectedShow/SelectedShow";
 
 function App() {
   const favorites = useSelector((state) => state.favorites.value);
-  const selectedShow = useSelector((state) => state.selectedShow.isSelected);
+  const dispatch = useDispatch()
+  const location = useLocation();
+
+  useEffect(() => {
+    dispatch(removeSelectedShow());
+  }, [location, dispatch]);
+
 
   return (
     <AppContainer>
@@ -23,7 +31,6 @@ function App() {
             element={<UpcomingSection favorites={favorites} />}
           />
         </Routes>
-      {selectedShow && <SelectedShow />}
       </main>
     </AppContainer>
   );
