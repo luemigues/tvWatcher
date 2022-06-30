@@ -6,7 +6,7 @@ Access my site at https://tv-watcher.netlify.app/
 
 ## About The App
 
-TV Watcher is a React built application that uses the TV Maze API as a resource. With the TV Watcher you can search for you favorite shows and store them as favorites the client. From your favorite shows, you can follow up con upcoming episodes available.
+TV Watcher is a React built application that uses the TV Maze API as a resource. With TV Watcher you can search for your favorite shows and store them as favorites on the client. You can then see the upcoming episode from your favorite shows.
 
 ## Technologies & Resources
 
