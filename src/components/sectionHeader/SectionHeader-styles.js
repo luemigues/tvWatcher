@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { styles } from "../../utils/defaultStyles";
 
 export const Container = styled.div`
+  width: 100%;
   max-width: 100vw;
   overflow: hidden;
 `;

@@ -4,6 +4,7 @@ import tvMaze from "../../../utils/resources";
 import SectionHeader from "../../sectionHeader/SectionHeader";
 import SearchBar from "../../global/searchBar/SearchBar";
 import ShowDisplay from "../../showsDisplay/ShowDisplay";
+import AiringToday from "../airingToday/AiringToday"
 
 function SearchSection(props) {
   
@@ -36,6 +37,7 @@ function SearchSection(props) {
       <SearchBar handleSearch={handleSearch} margin="5px" />
       <ResultText>{getText()}</ResultText>
       <ShowDisplay shows={showResults} />
+      <AiringToday />
     </Container>
   );
 }
