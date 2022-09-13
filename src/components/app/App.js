@@ -1,4 +1,4 @@
-import AppContainer from "./App-styles";
+import { AppContainer, Main } from "./App-styles";
 import { Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -22,7 +22,7 @@ function App() {
   return (
     <AppContainer>
       <Navbar />
-      <main>
+      <Main>
         <Routes>
           <Route path="/" element={<SearchSection />} exact />
           <Route path="/favorites" element={<FavoritesSection />} />
@@ -31,7 +31,7 @@ function App() {
             element={<UpcomingSection favorites={favorites} />}
           />
         </Routes>
-      </main>
+      </Main>
     </AppContainer>
   );
 }

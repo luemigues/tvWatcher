@@ -32,6 +32,19 @@ const helpers = {
     return favEpisodes;
   },
 
+  filterAiringTodayEpisodes(episodes) {
+    let episodesList = episodes.sort(function (a, b) {
+      return new Date(b.airstamp) + new Date(a.airstamp);
+    });
+
+    let airingToday = episodesList.filter((ep) => {
+      let airdate = new Date(ep.airstamp);
+      return airdate >= new Date(Date.now());
+    });
+
+    return airingToday;
+  },
+
   renewSchedule(schedule) {
     let length = schedule.length;
 

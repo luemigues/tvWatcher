@@ -8,6 +8,6 @@ export const Container = styled.div`
 export const EpisodesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 30px 5%;
+  margin: 0px 5%;
   justify-content: center;
 `;

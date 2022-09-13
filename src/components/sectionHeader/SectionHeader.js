@@ -13,7 +13,7 @@ function SectionHeader(props) {
 
   return (
     <Container>
-      <CoverContainer>
+      <CoverContainer hideCover>
         {[...Array(30)].map((n, i) => {
           return (
             <VerticalDiv key={i}>

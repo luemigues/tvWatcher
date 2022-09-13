@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-const AppContainer = styled.div`
+export const AppContainer = styled.div`
   text-align: center;
   max-width: 100vw;
 `;
 
-export default AppContainer;
+export const Main = styled.main`
+  margin: 0% 3%;
+`;

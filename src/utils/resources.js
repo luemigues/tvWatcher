@@ -33,6 +33,21 @@ const tvMaze = {
       throw error.message;
     }
   },
+
+  async getEpisodesByDate(date) {
+    try {
+      let response = await fetch(`${url}/schedule/web?date=${date}`, {
+        cache: "default",
+      });
+
+      let episodeList = await response.json();
+
+      return episodeList;
+    } catch (error) {
+      throw error.message;
+      
+    }
+  },
 };
 
 export default tvMaze;

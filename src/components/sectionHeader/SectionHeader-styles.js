@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { styles } from "../../utils/defaultStyles";
 
 export const Container = styled.div`
+  width: 100%;
   max-width: 100vw;
   overflow: hidden;
 `;
@@ -27,12 +28,13 @@ export const SectionTitle = styled.h1`
 
 export const CoverContainer = styled.div`
   display: flex;
-  max-height: 60px;
+  max-height: 30px;
   width: 100%;
   justify-content: space-around;
   margin: 45px 0px;
   box-sizing: border-box;
   overflox: hidden;
+  visibility: ${(props) => props.hideCover === true && "hidden"};
 `;
 
 export const VerticalDiv = styled.div`

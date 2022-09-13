@@ -19,7 +19,7 @@ function UpcomingSection(props) {
 
   return (
     <Container>
-      <SectionHeader title="Catch up on your favorite shows!" />
+      <SectionHeader title="Upcoming episodes from your favorite shows" />
       <EpisodesContainer>
         {schedule.map((episode) => {
           return <UpcomingCard key={episode.id} episode={episode} />;
