@@ -7,7 +7,6 @@ export const fetchTodaysEpisodes = createAsyncThunk(
     try {
       let currentDate = new Date(Date.now());
       currentDate = currentDate.toISOString().split("T")[0];
-      console.log(currentDate);
 
       const response = await tvMaze.getEpisodesByDate(currentDate);
       return response;

@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "./AiringToday-styles";
-import SectionHeader from "../../sectionHeader/SectionHeader";
+import { Container, SectionTitle } from "./AiringToday-styles";
 import ShowDisplay from "../../showsDisplay/ShowDisplay";
 import { fetchTodaysEpisodes } from "../../../store/airingToday.slice";
 import { useSelector, useDispatch } from "react-redux";
-import helpers from "../../../utils/helpers"
-import { E } from "styled-icons/simple-icons";
 
 function AiringToday(props) {
   let airingToday = useSelector((state) => state.airingToday.value);
@@ -30,14 +27,14 @@ function AiringToday(props) {
      airingNext = airingNext.map((ep) => {
         return ep._embedded;
       })
-      console.log(airingNext);
+
       setAiringTodayShows(airingNext);
     }
   }, [airingToday]);
 
   return (
     <Container>
-      <SectionHeader title="Recommended shows airing today" />
+      <SectionTitle>Recommended shows airing today</SectionTitle>
       <ShowDisplay shows={airingTodayShows} />
     </Container>
   );
